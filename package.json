@@ -19,5 +19,6 @@
   "description": "",
   "devDependencies": {
     "@types/node": "^22.7.4"
+  
   }
 }

@@ -10,6 +10,7 @@ module.exports ={
                 res.status(201).json({
                     message:'produto adcionado com sucesso!',
                     content:result
+                    
                 })}}
             
         catch(error){            

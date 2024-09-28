@@ -5,6 +5,7 @@ const UserController = require('../Controllers/UserController');
 
 
 router.route('/api/users')
+
 .get(controller.findAll)
 .post(controller.insertOne)
 

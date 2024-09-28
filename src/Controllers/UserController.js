@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt')
 
 module.exports ={
     insertOne: async (req,res) =>
+        
   {
         try{
             const hash = await bcrypt.hash(req.body.password,Number(process.env.ROUNDS))

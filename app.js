@@ -16,5 +16,6 @@ app.use(userRouter);
 app.listen(process.env.PORT, () => {
   console.log(
     `Sua aplicação está sendo executado na porta ${process.env.PORT}`
+    
   );
 });
