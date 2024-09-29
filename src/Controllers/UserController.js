@@ -87,7 +87,7 @@ findOne: async (req, res) => {
                 const result = await bcrypt.compare(req.body.password, user.password)
                 if(result){
                     const token = await jwtService.sign(user,process.env.SECRET)
-                res.status(200).json({message:'Usuário autenticado com sucesso!',token:token})
+                    res.status(200).json({message:'Usuário autenticado com sucesso!',token:token})
                 }else{
                     throw new Error('Usuário não encontrado')
                 }

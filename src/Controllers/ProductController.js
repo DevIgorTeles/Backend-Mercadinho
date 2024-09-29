@@ -1,25 +1,26 @@
 const productModel = require('../Models/ProductModel')
 module.exports ={
-    insertOne: async (req,res) =>
-  {
-        try{
-            if(existingProduct){
-                return res.status(400).json({message: 'codigo duplicado'})
+    insertOne: async (req, res) => {
+        try {
+            // Verifica se o produto com o mesmo código já existe
+            const existingProduct = await productModel.findOne({ code: req.body.code });
+            if (existingProduct) {
+                return res.status(400).json({ message: 'Código duplicado' });
             }
-            else{const result = await productModel.create(req.body)
-                res.status(201).json({
-                    message:'produto adcionado com sucesso!',
-                    content:result
-                    
-                })}}
-            
-        catch(error){            
+
+            // Se não existir, cria o novo produto
+            const result = await productModel.create(req.body);
+            res.status(201).json({
+                message: 'Produto adicionado com sucesso!',
+                content: result
+            });
+        } catch (error) {
             res.status(400).json({
-                message:'Produto duplicado!',
-                content:error
-            })
+                message: 'Erro ao adicionar produto',
+                content: error.message
+            });
         }
-},
+    },
     findOne: async (req,res) => {
         try{
             const result = await productModel.findOne({code: req.params.code})
