@@ -10,9 +10,7 @@ const cors = require('cors')
 
 
 app.use(express.json());
-app.use(cors())
 app.use(ProductsRouter);
-app.use(MiddlewareAuth);
 app.use(userRouter);
 
 app.listen(process.env.PORT, () => {
