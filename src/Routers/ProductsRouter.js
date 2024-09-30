@@ -4,9 +4,7 @@ const controller = require('../Controllers/ProductController')
 
 
 router.route('/api/products')
-
 .get(controller.findAll)
-
 .post(controller.insertOne)
 
 

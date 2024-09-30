@@ -3,7 +3,7 @@ const jwtService = require('jsonwebtoken')
 module.exports = async (req,res,next)=>{
     const path = req.path
     const method = req.method
-    const nonSecurityPaths = ['/login','/about']
+    const nonSecurityPaths = ['/login','/about','/api/products', '/api/users']
 
     if(nonSecurityPaths.includes(path) || (path === '/api/users' && method === 'POST')){
         return next ()
