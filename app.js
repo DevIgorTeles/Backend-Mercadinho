@@ -10,6 +10,7 @@ const cors = require('cors')
 
 
 app.use(express.json());
+app.use(cors())
 app.use(ProductsRouter);
 app.use(userRouter);
 
