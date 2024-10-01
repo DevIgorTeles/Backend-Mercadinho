@@ -14,6 +14,7 @@ router.route('/api/products/:code')
 
 // Rota para adicionar promoção
 router.route('/api/products/:code/promotion')
-    .put(controller.addPromotion);
+    .put(controller.addPromotion)
+    .delete(controller.removePromotion);
 
 module.exports = router;
